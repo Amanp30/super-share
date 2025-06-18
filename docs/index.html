@@ -140,6 +140,61 @@ console.log(urls.facebook);</code></pre>
       </div>
     </section>
 
+    <div class="mt-16 flex justify-center">
+      <div
+        class="bg-gradient-to-br from-white via-gray-50 to-gray-100 border border-gray-200 rounded-2xl p-6 w-full max-w-md shadow-md"
+      >
+        <div class="text-center">
+          <div class="inline-flex items-center gap-2 mb-2 text-indigo-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c1.38 0 2.5-1.12 2.5-2.5S13.38 3 12 3 9.5 4.12 9.5 5.5 10.62 8 12 8zm0 2c-2.21 0-4 1.79-4 4v1h8v-1c0-2.21-1.79-4-4-4z"
+              />
+            </svg>
+            <span class="font-semibold text-sm tracking-wide uppercase"
+              >Donate</span
+            >
+          </div>
+          <h2 class="text-xl font-bold text-gray-800">Support My Work</h2>
+          <p class="text-sm text-gray-500 mb-4">
+            Scan & donate via UPI:<br /><span class="font-medium text-gray-700"
+              >pareekaman1@ybl</span
+            >
+          </p>
+          <div id="qrCodeContainer" class="mb-4"></div>
+          <p class="text-xs text-gray-400">
+            Even small contributions make a big difference 💖
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PayMeQR Script -->
+    <script src="https://cdn.jsdelivr.net/npm/paymeqr@latest/dist/paymeqr.min.js"></script>
+    <script>
+      const qr = new PayMeQR({ upiId: "pareekaman1@ybl" });
+      qr.setPayeeName("Aman Pareek")
+        .createQrCode()
+        .then((img) => {
+          const qrDiv = document.getElementById("qrCodeContainer");
+          img.style.width = "170px";
+          img.style.height = "170px";
+          img.style.borderRadius = "0.75rem";
+          img.style.margin = "0 auto";
+          img.alt = "UPI QR Code for donation";
+          qrDiv.appendChild(img);
+        });
+    </script>
+
     <section>
       <h2 class="text-2xl font-semibold text-gray-800 mb-4">License</h2>
       <p class="text-gray-600">MIT</p>
