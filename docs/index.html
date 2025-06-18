@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white text-gray-800">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SuperShare Documentation</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Highlight.js -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <style>
+      pre code {
+        border-radius: 0.5rem;
+        padding: 1rem;
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="p-6 md:p-12 max-w-5xl mx-auto font-sans">
+    <header class="mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-2">
+        SuperShare Documentation
+      </h1>
+      <p class="text-lg text-gray-600">
+        Social media sharing utility for web developers. Simple. Fast. Plug and
+        play.
+      </p>
+    </header>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Installation</h2>
+
+      <div class="mb-6">
+        <h3 class="text-lg font-medium text-gray-700 mb-2">
+          Using NPM (CommonJS)
+        </h3>
+        <pre><code class="language-bash">npm install super-share</code></pre>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-medium text-gray-700 mb-2">
+          Using CDN (Browser)
+        </h3>
+        <pre><code class="language-html">&lt;script src="https://cdn.jsdelivr.net/npm/super-share/dist/index.min.js"&gt;&lt;/script&gt;</code></pre>
+        <p class="text-sm text-gray-500 mt-1">
+          This adds <code>SuperShare</code> to <code>window</code>.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Usage</h2>
+
+      <div class="mb-6">
+        <h3 class="text-lg font-medium text-gray-700 mb-2">
+          CommonJS (Node, Express, etc.)
+        </h3>
+        <pre><code class="language-js">const SuperShare = require('super-share');
+
+const share = new SuperShare({
+  url: 'https://example.com',
+  text: 'Check this out!',
+  hashtags: 'javascript,webdev'
+});</code></pre>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-medium text-gray-700 mb-2">Browser</h3>
+        <pre><code class="language-html">&lt;script src="https://cdn.jsdelivr.net/npm/super-share/dist/index.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  const share = new SuperShare({
+    url: 'https://example.com',
+    text: 'Check this out!',
+    hashtags: 'webdev,javascript'
+  });
+
+  share.attachShareHandlers(); // Optional
+&lt;/script&gt;</code></pre>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">API Reference</h2>
+
+      <div class="mb-6">
+        <h3 class="text-lg font-medium text-gray-900">
+          getShareUrl(platform: string)
+        </h3>
+        <p class="text-gray-600 mb-2">Returns a platform-specific share URL.</p>
+        <pre><code class="language-js">const twitterUrl = share.getShareUrl('twitter');</code></pre>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-lg font-medium text-gray-900">getAllShareUrls()</h3>
+        <p class="text-gray-600 mb-2">
+          Returns all available share URLs as an object.
+        </p>
+        <pre><code class="language-js">const urls = share.getAllShareUrls();
+console.log(urls.facebook);</code></pre>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold text-gray-900">
+          attachShareHandlers()
+        </h3>
+        <p class="text-gray-600 mb-2">
+          Automatically binds click handlers to all elements with
+          <code class="text-sm bg-gray-100 px-1 rounded">data-share</code>
+          attribute. Accepts no arguments.
+        </p>
+        <pre><code class="language-js">// Binds to [data-share] elements
+      share.attachShareHandlers();</code></pre>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+        Supported Platforms
+      </h2>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-gray-700 text-sm leading-6"
+      >
+        <span>Facebook</span><span>Twitter</span><span>LinkedIn</span>
+        <span>WhatsApp</span><span>Telegram</span><span>Reddit</span>
+        <span>Pinterest</span><span>Email</span><span>Tumblr</span>
+        <span>Buffer</span><span>VK</span><span>Xing</span> <span>SMS</span
+        ><span>Pocket</span><span>Flipboard</span> <span>Instapaper</span
+        ><span>Skype</span><span>Line</span> <span>Mix</span><span>Digg</span
+        ><span>Weibo</span><span>Snapchat</span>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">License</h2>
+      <p class="text-gray-600">MIT</p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/aman-badge/dist/index.min.js"></script>
+  </body>
+</html>

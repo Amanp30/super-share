@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Minify JS with Terser",
+        "type": "shell",
+        "command": "npx",
+        "args": [
+          "terser",
+          "src/main.js",
+          "--compress",
+          "--mangle",
+          "--output",
+          "dist/index.min.js"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": [],
+        "detail": "Minifies src/main.js to dist/index.min.js using Terser"
+      }
+    ]
+  }
+  

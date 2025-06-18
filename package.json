@@ -1,0 +1,39 @@
+{
+  "name": "super-share",
+  "version": "2.0.0",
+  "description": "Lightweight social media share link generator for JavaScript (CommonJS & Browser support)",
+  "main": "dist/index.min.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "files": [
+    "dist/index.min.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "cdn": "dist/index.min.js",
+  "jsdelivr": "dist/index.min.js",
+  "unpkg": "dist/index.min.js",
+  "author": {
+    "name": "Aman Pareek",
+    "url": "https://amanpareek.in"
+  },
+  "license": "MIT",
+  "keywords": [
+    "social-share",
+    "share",
+    "javascript",
+    "commonjs",
+    "browser",
+    "social-media",
+    "utility"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amanp30/super-share.git"
+  },
+  "homepage": "https://amanp30.github.io/super-share",
+  "bugs": {
+    "url": "https://github.com/amanp30/super-share/issues"
+  }
+}
